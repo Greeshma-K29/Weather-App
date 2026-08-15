@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeatherNow | Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+
+                <div>
+                    <h1>WeatherNow</h1>
+                    <p>Live weather information</p>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Search Section -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city..."
+                    autocomplete="off"
+                >
+
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+
+            </div>
+
+            <p id="errorMessage" class="error-message"></p>
+
+        </section>
+
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+
+        <!-- Weather Dashboard -->
+        <section id="weatherContainer" class="weather-container hidden">
+
+            <!-- Main Weather Card -->
+            <div class="main-card">
+
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="cityName">--</span>
+                    <span id="countryName">--</span>
+                </div>
+
+                <p id="dateTime" class="date-time">--</p>
+
+                <div class="weather-main">
+
+                    <div class="weather-icon-container">
+                        <img
+                            id="weatherIcon"
+                            src=""
+                            alt="Weather condition"
+                        >
+                    </div>
+
+                    <div class="temperature-container">
+                        <span id="temperature">--</span>
+                        <span class="degree">°C</span>
+                    </div>
+
+                </div>
+
+                <h2 id="weatherCondition">--</h2>
+
+                <p class="feels-like">
+                    Feels like
+                    <strong id="feelsLike">--</strong>°C
+                </p>
+
+            </div>
+
+
+            <!-- Weather Details -->
+            <div class="details-card">
+
+                <h2>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Weather Details
+                </h2>
+
+                <div class="details-grid">
+
+                    <!-- Humidity -->
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div>
+                            <span>Humidity</span>
+                            <strong>
+                                <span id="humidity">--</span>%
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Wind -->
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+
+                        <div>
+                            <span>Wind Speed</span>
+                            <strong>
+                                <span id="windSpeed">--</span> m/s
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pressure -->
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+
+                        <div>
+                            <span>Pressure</span>
+                            <strong>
+                                <span id="pressure">--</span> hPa
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Visibility -->
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+
+                        <div>
+                            <span>Visibility</span>
+                            <strong>
+                                <span id="visibility">--</span> km
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sunrise -->
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+
+                        <div>
+                            <span>Sunrise</span>
+                            <strong id="sunrise">--</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Sunset -->
+                    <div class="detail">
+
+                        <div class="detail-icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+
+                        <div>
+                            <span>Sunset</span>
+                            <strong id="sunset">--</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Welcome Message -->
+        <section id="welcome" class="welcome">
+
+            <div class="welcome-icon">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <h2>Check the weather anywhere</h2>
+
+            <p>
+                Enter a city name above to get real-time weather
+                information.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                WeatherNow  2026
+            </p>
+
+            <span>Powered by OpenWeatherMap</span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
